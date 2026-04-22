@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Persona {
   idIntegrante: number;
@@ -16,7 +17,7 @@ export interface Persona {
   providedIn: 'root',
 })
 export class Familia {
-  private readonly apiUrl = 'http://localhost:8080/api/integrantes';
+  private readonly apiUrl = `${environment.apiBaseUrl}/integrantes`;
 
   constructor(private http: HttpClient) {}
 
