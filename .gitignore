@@ -1,0 +1,6 @@
+﻿node_modules/
+dist/
+target/
+.vscode/
+.angular/
+*.log

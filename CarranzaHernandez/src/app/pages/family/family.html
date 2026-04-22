@@ -1,0 +1,42 @@
+<section class="container py-4 family-page">
+  <div class="section-shell p-4 p-md-5 mb-4 heading-block">
+    <p class="eyebrow mb-1">Nuestra Familia</p>
+    <h2 class="mb-2">Integrantes Registrados</h2>
+    <p class="mb-0 text-muted">Consulta perfiles, parentesco y datos basicos de cada integrante.</p>
+  </div>
+
+  <div *ngIf="cargando" class="alert alert-info border-0 section-shell">Cargando integrantes...</div>
+  <div *ngIf="!cargando && error" class="alert alert-danger border-0 section-shell">{{ error }}</div>
+  <div *ngIf="!cargando && !error && datosFamilia.length === 0" class="alert alert-warning border-0 section-shell">
+    La API respondio correctamente, pero no hay integrantes registrados en la base de datos.
+  </div>
+
+  <div class="row g-4" *ngIf="!cargando && !error && datosFamilia.length > 0">
+    <div class="col-sm-6 col-lg-4" *ngFor="let persona of datosFamilia; trackBy: trackById">
+      <article class="card h-100 member-card">
+        <img src="https://ui-avatars.com/api/?name={{ persona.nombre }}+{{ persona.apellido }}&background=f4dfbe&color=5c3c1e&size=256"
+          class="card-img-top member-avatar" alt="Avatar" />
+
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title mb-2">{{ persona.nombre }} {{ persona.apellido }}</h5>
+          <span class="badge-chip mb-3">{{ persona.parentesco || 'Sin parentesco' }}</span>
+
+          <p class="card-text mb-4">
+            <strong>Nacimiento:</strong> {{ persona.fechaNacimiento || 'Sin dato' }} <br />
+            <strong>Telefono:</strong> {{ persona.telefono || 'Sin dato' }}
+          </p>
+
+          <a *ngIf="persona.idIntegrante > 0; else perfilNoDisponible"
+             [routerLink]="['/integrante', persona.idIntegrante]" class="btn member-btn mt-auto">
+            Ver perfil de {{ persona.idIntegrante }}
+          </a>
+          <ng-template #perfilNoDisponible>
+            <button type="button" class="btn btn-outline-secondary mt-auto" disabled>
+              Perfil no disponible
+            </button>
+          </ng-template>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

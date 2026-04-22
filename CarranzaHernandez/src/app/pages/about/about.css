@@ -1,0 +1,61 @@
+.about-page {
+  max-width: 980px;
+}
+
+.profile-shell {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(229, 202, 160, 0.26), transparent 35%),
+    linear-gradient(180deg, #fffaf3, #fffefb);
+}
+
+.eyebrow {
+  color: #9a5e21;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  font-size: 0.72rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid #e8d8bf;
+  box-shadow: 0 16px 34px rgba(94, 60, 20, 0.16);
+  object-fit: cover;
+}
+
+.profile-chip {
+  display: inline-block;
+  margin: 0 0 1rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #8e571f;
+  background: #f8ebd8;
+  border: 1px solid #ecd3af;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+
+.profile-list p {
+  margin: 0 0 0.55rem;
+  color: #4d4337;
+}
+
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    max-width: 300px;
+  }
+}

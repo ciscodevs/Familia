@@ -1,0 +1,24 @@
+<nav class="family-nav">
+  <div class="nav-wrap">
+    <a class="brand" [routerLink]="['/home']">
+      <img src="family.png" alt="Logo familia">
+      <span>Fam. Carranza</span>
+    </a>
+
+    <div class="links">
+      <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/family']" routerLinkActive="active">Familia</a>
+      <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+    </div>
+
+    <div class="auth-area" *ngIf="perfil$ | async as perfil; else loginBtn">
+      <img *ngIf="perfil.picture" class="avatar" [src]="perfil.picture" [alt]="perfil.name || 'Usuario'">
+      <span class="user-name">{{ perfil.name || perfil.email || 'Usuario' }}</span>
+      <button type="button" class="logout-btn" (click)="cerrarSesion()">Salir</button>
+    </div>
+
+    <ng-template #loginBtn>
+      <a [routerLink]="['/login']" class="login-btn">Login Gmail</a>
+    </ng-template>
+  </div>
+</nav>

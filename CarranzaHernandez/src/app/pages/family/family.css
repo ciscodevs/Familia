@@ -1,0 +1,77 @@
+.family-page {
+  max-width: 1100px;
+}
+
+.heading-block {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(223, 188, 131, 0.35), transparent 35%),
+    linear-gradient(180deg, #fffaf2, #fffdf8);
+}
+
+.eyebrow {
+  color: #9a5e21;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  font-size: 0.72rem;
+}
+
+.member-card {
+  border-radius: 18px;
+  border: 1px solid #eadcc8;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(110, 70, 28, 0.12);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  animation: card-in 420ms ease both;
+  background: #fffefb;
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 36px rgba(93, 56, 20, 0.22);
+}
+
+.member-avatar {
+  background: linear-gradient(135deg, #f8e7cd, #f9f1e5);
+  padding: 1rem;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+}
+
+.badge-chip {
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #8e571f;
+  background: #f8ebd8;
+  border: 1px solid #ecd3af;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+
+.member-btn {
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #d0822f, #9f5f24);
+}
+
+.member-btn:hover {
+  color: #fff;
+  filter: brightness(1.05);
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

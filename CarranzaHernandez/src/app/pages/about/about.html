@@ -1,0 +1,25 @@
+<section class="container py-4 about-page">
+  <div class="section-shell p-4 p-md-5 profile-shell">
+    <p class="eyebrow mb-1">Perfil Destacado</p>
+    <h2 class="mb-4">Informacion Personal</h2>
+
+    <p *ngIf="cargando" class="mb-0">Cargando informacion...</p>
+
+    <div *ngIf="!cargando && francisco as persona" class="profile-grid">
+      <img src="yo.jpeg" class="profile-photo" alt="Foto de {{ persona.nombre }}">
+
+      <div>
+        <h3 class="mb-2">{{ persona.nombre }} {{ persona.apellido }}</h3>
+        <p class="profile-chip">{{ persona.parentesco || 'Sin parentesco' }}</p>
+
+        <div class="profile-list">
+          <p><strong>Fecha de Nacimiento:</strong> {{ persona.fechaNacimiento || 'Sin dato' }}</p>
+          <p><strong>Telefono:</strong> {{ persona.telefono || 'Sin dato' }}</p>
+          <p><strong>Sexo:</strong> {{ persona.sexo || 'Sin dato' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <p *ngIf="!cargando && !francisco && error" class="mb-0">{{ error }}</p>
+  </div>
+</section>

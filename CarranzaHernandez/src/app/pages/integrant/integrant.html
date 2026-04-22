@@ -1,0 +1,53 @@
+<section class="container py-4 profile-page">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+      @if (cargando) {
+        <div class="section-shell state-shell loading-shell">
+          <span class="loading-dot"></span>
+          <p class="mb-0">Cargando integrante...</p>
+        </div>
+      }
+
+      @if (individuo) {
+        <article class="section-shell profile-card">
+          <div class="profile-top">
+            <p class="eyebrow mb-2">Detalle de Integrante</p>
+            <img src="https://ui-avatars.com/api/?name={{ individuo.nombre }}+{{ individuo.apellido }}&background=f4dfbe&color=5c3c1e&size=180"
+              class="profile-avatar" alt="Avatar de integrante">
+            <h2 class="mb-1">{{ individuo.nombre }} {{ individuo.apellido }}</h2>
+            <span class="badge-chip">{{ individuo.parentesco || 'Sin parentesco' }}</span>
+          </div>
+
+          <div class="profile-body">
+            <div class="profile-item">
+              <span class="label">Fecha de nacimiento</span>
+              <span class="value">{{ individuo.fechaNacimiento || 'Sin dato' }}</span>
+            </div>
+            <div class="profile-item">
+              <span class="label">Telefono</span>
+              <span class="value">{{ individuo.telefono || 'Sin dato' }}</span>
+            </div>
+            <div class="profile-item">
+              <span class="label">Sexo</span>
+              <span class="value">{{ individuo.sexo || 'Sin dato' }}</span>
+            </div>
+            <div class="profile-item">
+              <span class="label">ID en sistema</span>
+              <span class="value">#{{ individuo.idIntegrante }}</span>
+            </div>
+          </div>
+
+          <a routerLink="/family" class="btn back-btn w-100 mt-4">
+            Volver a la familia
+          </a>
+        </article>
+      } @else if (error) {
+        <div class="section-shell state-shell error-shell">
+          <h4 class="mb-2">No se pudo cargar el perfil</h4>
+          <p class="mb-3">{{ error }}</p>
+          <a routerLink="/family" class="btn back-btn">Regresar</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

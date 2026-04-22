@@ -1,0 +1,61 @@
+.login-page {
+  min-height: calc(100vh - 260px);
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.login-shell {
+  width: min(520px, 100%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #9a5e21;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  font-size: 0.72rem;
+  margin: 0 0 0.5rem;
+}
+
+.login-shell h2 {
+  margin: 0 0 0.5rem;
+}
+
+.muted {
+  margin: 0 0 1.5rem;
+  color: #665847;
+}
+
+.google-btn {
+  width: 100%;
+  border: 1px solid #e4d2b8;
+  background: #fffdfa;
+  color: #2e2416;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  transition: all 180ms ease;
+}
+
+.google-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(98, 69, 30, 0.14);
+}
+
+.google-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(#4285f4 0 25%, #34a853 25% 50%, #fbbc05 50% 75%, #ea4335 75% 100%);
+  color: #fff;
+  font-weight: 800;
+}
