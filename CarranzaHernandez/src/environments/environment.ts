@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://familia-production-b116.up.railway.app',
+  apiBaseUrl: 'https://familia-production-b116.up.railway.app/api/integrantes',
 };
