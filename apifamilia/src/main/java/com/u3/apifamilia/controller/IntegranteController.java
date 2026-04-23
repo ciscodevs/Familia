@@ -17,7 +17,7 @@ import com.u3.apifamilia.repository.IntegranteRepository;
 
 @RestController
 @RequestMapping("/api/integrantes")
-@CrossOrigin(origins = "${app.cors.allowed-origins}")
+@CrossOrigin(origins = "${APP_CORS_ALLOWED_ORIGINS}")
 public class IntegranteController {
 
     private final IntegranteRepository integranteRepository;
