@@ -67,4 +67,5 @@ export class Familia {
     const text = String(value).trim();
     return text.length > 0 ? text : null;
   }
+  
 }
